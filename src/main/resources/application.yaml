@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: permitflow
+
+  # Configuración de MySQL
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/permitflow_db?useSSL=false&serverTimezone=UTC}
+    username: ${SPRING_DATASOURCE_USERNAME:root}
+    password: ${SPRING_DATASOURCE_PASSWORD:TuClaveRealDeMySQLAqui}
+
+  # Configuración de JPA / Hibernate
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+
+# Configuración de JWT
+jwt:
+  secret: "MiClaveSecretaSuperSeguraDe256BitsParaFirmarLosTokensJWT1234567890!@#"
+  expiration: 3600000
